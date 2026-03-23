@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Whack-A-Mole</title>
 
-<!-- LINK TO CSS FILE -->
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,7 +15,6 @@
         <!-- FEEDBACK -->
         <div class="feedback">
             <h3>FEEDBACK</h3>
-    
         </div>
 
         <!-- AVATAR -->
@@ -27,7 +25,7 @@
 
         <!-- SCORE -->
         <div class="score">
-            <h3>SCORE</h3>
+            <h3>SCORE: <span id="score">0</span></h3> <!-- ✅ FIXED -->
             <div class="score-bar"></div>
         </div>
     </div>
@@ -46,12 +44,15 @@
 
     <!-- BUTTONS -->
     <div class="buttons">
-        <button>START</button>
-        <button>RESUME</button>
-        <button>RESET</button>
+        <button id="startBtn">START</button>   <!-- ✅ FIXED -->
+        <button id="resumeBtn">RESUME</button>
+        <button id="resetBtn">RESET</button>
     </div>
 
 </div>
+
+<!-- JS at bottom (good 👍) -->
 <script src="script.js"></script>
+
 </body>
 </html>
