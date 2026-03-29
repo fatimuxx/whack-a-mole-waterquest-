@@ -9,6 +9,22 @@ let score = 0;
 let misses = 0;
 let gameInterval;
 let gameRunning = false;
+let currentLevel = 1;
+let gameSpeed = 700; // Initial speed in milliseconds
+
+// Level thresholds
+const levelThresholds = {
+    1: 3,  // Level 1: reach score 3
+    2: 5,  // Level 2: reach score 5
+    3: 7   // Level 3: reach score 7 (final)
+};
+
+// Speed for each level
+const levelSpeeds = {
+    1: 700,  // Level 1 speed
+    2: 500,  // Level 2 speed (faster)
+    3: 350   // Level 3 speed (fastest)
+};
 
 // Avatar upload handler
 let avatarUpload = document.getElementById("avatar-upload");
@@ -82,8 +98,21 @@ function showMole() {
         cleanup();
         mole.remove();
 
-        if (score >= 5) {
-            endGame("🎉 You win! Score reached 5!");
+        // Check if current level threshold is reached
+        if (score >= levelThresholds[currentLevel]) {
+            if (currentLevel < 3) {
+                // Advance to next level
+                currentLevel++;
+                gameSpeed = levelSpeeds[currentLevel];
+                alert(`🚀 Level ${currentLevel}! Game is getting faster!`);
+                
+                // Restart game loop with new speed
+                clearInterval(gameInterval);
+                gameInterval = setInterval(showMole, gameSpeed);
+            } else {
+                // Level 3 complete - game won
+                endGame("🎉 You win! You completed all levels!");
+            }
         }
     }
 
@@ -97,8 +126,21 @@ function showMole() {
         cleanup();
         mole.remove();
 
-        if (score >= 5) {
-            endGame("🎉 You win! Score reached 5!");
+        // Check if current level threshold is reached
+        if (score >= levelThresholds[currentLevel]) {
+            if (currentLevel < 3) {
+                // Advance to next level
+                currentLevel++;
+                gameSpeed = levelSpeeds[currentLevel];
+                alert(`🚀 Level ${currentLevel}! Game is getting faster!`);
+                
+                // Restart game loop with new speed
+                clearInterval(gameInterval);
+                gameInterval = setInterval(showMole, gameSpeed);
+            } else {
+                // Level 3 complete - game won
+                endGame("🎉 You win! You completed all levels!");
+            }
         }
     });
 
@@ -127,7 +169,7 @@ startBtn.addEventListener("click", () => {
 resumeBtn.addEventListener("click", () => {
     if (!gameRunning) {
         gameRunning = true;
-        gameInterval = setInterval(showMole, 700);
+        gameInterval = setInterval(showMole, gameSpeed);
     }
 });
 
@@ -140,12 +182,14 @@ resetBtn.addEventListener("click", () => {
 function startGame() {
     score = 0;
     misses = 0;
+    currentLevel = 1;
+    gameSpeed = levelSpeeds[currentLevel];
     gameRunning = true;
 
     scoreDisplay.textContent = score;
 
     clearInterval(gameInterval);
-    gameInterval = setInterval(showMole, 700);
+    gameInterval = setInterval(showMole, gameSpeed);
 }
 
 // reset helper
@@ -155,6 +199,8 @@ function resetGame() {
 
     score = 0;
     misses = 0;
+    currentLevel = 1;
+    gameSpeed = levelSpeeds[currentLevel];
     scoreDisplay.textContent = score;
 
     // remove all moles from screen
