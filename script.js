@@ -15,8 +15,8 @@ let gameSpeed = 700; // Initial speed in milliseconds
 // Level thresholds
 const levelThresholds = {
     1: 3,  // Level 1: reach score 3
-    2: 5,  // Level 2: reach score 5
-    3: 7   // Level 3: reach score 7 (final)
+    2: 7,  // Level 2: reach score 5
+    3: 10   // Level 3: reach score 7 (final)
 };
 
 // Speed for each level
