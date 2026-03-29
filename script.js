@@ -10,6 +10,30 @@ let misses = 0;
 let gameInterval;
 let gameRunning = false;
 
+// Avatar upload handler
+let avatarUpload = document.getElementById("avatar-upload");
+let avatarImg = document.getElementById("avatar-img");
+
+avatarUpload.addEventListener("change", (e) => {
+    let file = e.target.files[0];
+    if (file) {
+        let reader = new FileReader();
+        reader.onload = (event) => {
+            avatarImg.src = event.target.result;
+            localStorage.setItem("userAvatar", event.target.result);
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+// Load saved avatar on page load
+window.addEventListener("load", () => {
+    let savedAvatar = localStorage.getItem("userAvatar");
+    if (savedAvatar) {
+        avatarImg.src = savedAvatar;
+    }
+});
+
 // random hole
 function randomHole() {
     return holes[Math.floor(Math.random() * holes.length)];
@@ -25,7 +49,13 @@ function showMole() {
 
     let mole = document.createElement("div");
     mole.classList.add("mole");
-    mole.textContent = "F";
+
+    // jug image as the mole
+    let jugImg = document.createElement('img');
+    jugImg.src = 'charityjug.jpg';
+    jugImg.alt = 'jug';
+    jugImg.classList.add('jug');
+    mole.appendChild(jugImg);
 
     let clicked = false;
 

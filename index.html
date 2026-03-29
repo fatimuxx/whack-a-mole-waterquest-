@@ -19,8 +19,11 @@
 
         <!-- AVATAR -->
         <figure class="avatar">
-            <div class="avatar-circle"></div>
-            <figcaption>AVATAR</figcaption>
+            <label for="avatar-upload" class="avatar-upload-label">
+                <img id="avatar-img" src="placeholder-avatar.jpg" alt="user avatar" class="avatar-circle">
+                <span class="avatar-hint">Click to upload</span>
+            </label>
+            <input type="file" id="avatar-upload" accept="image/*" hidden>
         </figure>
 
         <!-- SCORE -->
@@ -32,24 +35,12 @@
 
     <!-- GRID -->
     <section class="grid" aria-label="game grid">
-        <button class="hole" data-index="0" aria-label="hole 1">
-            <img src="charityjug.jpg" alt="charity jug" class="jug">
-        </button>
-        <button class="hole" data-index="1" aria-label="hole 2">
-            <img src="charityjug.jpg" alt="charity jug" class="jug">
-        </button>
-        <button class="hole" data-index="2" aria-label="hole 3">
-            <img src="charityjug.jpg" alt="charity jug" class="jug">
-        </button>
-        <button class="hole" data-index="3" aria-label="hole 4">
-            <img src="charityjug.jpg" alt="charity jug" class="jug">
-        </button>
-        <button class="hole" data-index="4" aria-label="hole 5">
-            <img src="charityjug.jpg" alt="charity jug" class="jug">
-        </button>
-        <button class="hole" data-index="5" aria-label="hole 6">
-            <img src="charityjug.jpg" alt="charity jug" class="jug">
-        </button>
+        <button class="hole" data-index="0" aria-label="hole 1"></button>
+        <button class="hole" data-index="1" aria-label="hole 2"></button>
+        <button class="hole" data-index="2" aria-label="hole 3"></button>
+        <button class="hole" data-index="3" aria-label="hole 4"></button>
+        <button class="hole" data-index="4" aria-label="hole 5"></button>
+        <button class="hole" data-index="5" aria-label="hole 6"></button>
     </section>
 
     <h1 class="title">WHACK - A - MOLE</h1>

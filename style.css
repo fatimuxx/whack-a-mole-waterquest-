@@ -26,8 +26,7 @@ body {
     width: 900px;
     margin: 20px auto;
     padding: 20px;
-    background: #f786bb;
-    border: 5px solid #333;
+    background: #76c6f5;
     position: relative;
 }
 
@@ -42,7 +41,7 @@ body {
 .feedback {
     width: 200px;
     height: 150px;
-    background: #ccc;
+    background: #ff4d00;
     padding: 10px;
 }
 
@@ -58,13 +57,42 @@ body {
     text-align: center;
 }
 
+.avatar-upload-label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
 .avatar-circle {
     width: 120px;
     height: 120px;
-    background: #bbb;
+    background: #ff4d00;
     border-radius: 50%;
     margin: auto;
     position: relative;
+    object-fit: cover;
+    border: 3px solid #333;
+    transition: transform 0.2s;
+}
+
+.avatar-upload-label:hover .avatar-circle {
+    transform: scale(1.05);
+}
+
+.avatar-hint {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #333;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.avatar-upload-label:hover .avatar-hint {
+    opacity: 1;
 }
 
 
@@ -84,7 +112,7 @@ body {
 
 .score-bar {
     height: 20px;
-    background: #ccc;
+    background: #ff4d00;
     margin-top: 10px;
 }
 
@@ -100,7 +128,7 @@ body {
 .hole {
     width: 100px;
     height: 100px;
-    background: #bbb;
+    background: #ff4d00;
     position: relative;
     border: none;
     padding: 0;
@@ -115,10 +143,8 @@ body {
 
 /* Jug image inside each hole */
 .hole .jug {
-    max-width: 70%;
-    max-height: 70%;
-    width: auto;
-    height: auto;
+    max-width: 100%;
+    max-height: 100%;
     display: block;
     margin: 0 auto;
     pointer-events: none; /* let clicks hit the hole button */
@@ -161,20 +187,20 @@ body {
 }
 /* MOLE */
 .mole {
-    width: 40px;
-    height: 40px;
-    background: green;
-    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border-radius: 0;
     position: absolute;
     bottom: 10px;
-    left: 30px;
+    left: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-weight: bold;
+    color: inherit;
+    font-weight: normal;
     cursor: pointer;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    box-shadow: none;
 }
 /* =========================
    TABLET (up to 900px)
