@@ -4,6 +4,23 @@ body {
     background: #76c6f5;
 }
 
+/* Charity Water logo: fill transparent pixels to match page background */
+.charity-logo {
+    background-color: #f786bb;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0;
+    text-align: center;
+}
+
+.charity-logo-centered {
+    display: block;
+    margin: 10px auto 0;
+    max-width: 240px;
+    width: 100%;
+    height: auto;
+}
+
 /* MAIN CONTAINER */
 .container {
     width: 900px;
@@ -96,6 +113,18 @@ body {
     outline: 3px solid rgba(0,0,0,0.35);
 }
 
+/* Jug image inside each hole */
+.hole .jug {
+    max-width: 70%;
+    max-height: 70%;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    pointer-events: none; /* let clicks hit the hole button */
+    transform: translateY(10%);
+}
+
 
 .hole::before {
     transform: rotate(45deg);
@@ -128,6 +157,7 @@ body {
     text-align: center;
     margin-top: 10px;
     font-weight: bold;
+    font-size: 20px;
 }
 /* MOLE */
 .mole {
