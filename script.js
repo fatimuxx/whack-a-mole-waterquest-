@@ -29,31 +29,51 @@ function showMole() {
 
     let clicked = false;
 
-    mole.addEventListener("click", () => {
+    function cleanup() {
+        hole.removeEventListener('click', onHoleClick);
+    }
+
+    function onHoleClick() {
+        if (!gameRunning) return;
+        if (!hole.querySelector('.mole')) return;
+        clicked = true;
+        score++;
+        scoreDisplay.textContent = score;
+        cleanup();
+        mole.remove();
+
+        if (score >= 5) {
+            endGame("🎉 You win! Score reached 5!");
+        }
+    }
+
+    mole.addEventListener("click", (e) => {
+        e.stopPropagation();
         if (!gameRunning) return;
 
         clicked = true;
         score++;
         scoreDisplay.textContent = score;
+        cleanup();
         mole.remove();
 
-        // WIN CONDITION
         if (score >= 5) {
             endGame("🎉 You win! Score reached 5!");
         }
     });
 
+    hole.addEventListener('click', onHoleClick);
     hole.appendChild(mole);
 
     setTimeout(() => {
         if (!clicked) {
             misses++;
 
-            // LOSE CONDITION
             if (misses >= 3) {
                 endGame("💀 Game Over! You missed 3 moles.");
             }
         }
+        cleanup();
         mole.remove();
     }, 800);
 }

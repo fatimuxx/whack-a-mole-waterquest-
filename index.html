@@ -9,47 +9,47 @@
 
 <body>
 
-<div class="container">
+<main class="container">
 
-    <div class="top">
+    <header class="top">
         <!-- FEEDBACK -->
-        <div class="feedback">
+        <aside class="feedback">
             <h3>FEEDBACK</h3>
-        </div>
+        </aside>
 
         <!-- AVATAR -->
-        <div class="avatar">
+        <figure class="avatar">
             <div class="avatar-circle"></div>
-            <p>AVATAR</p>
-        </div>
+            <figcaption>AVATAR</figcaption>
+        </figure>
 
         <!-- SCORE -->
-        <div class="score">
+        <section class="score" aria-live="polite">
             <h3>SCORE: <span id="score">0</span></h3> <!-- ✅ FIXED -->
             <div class="score-bar"></div>
-        </div>
-    </div>
+        </section>
+    </header>
 
     <!-- GRID -->
-    <div class="grid">
-        <div class="hole" data-index="0"></div>
-        <div class="hole" data-index="1"></div>
-        <div class="hole" data-index="2"></div>
-        <div class="hole" data-index="3"></div>
-        <div class="hole" data-index="4"></div>
-        <div class="hole" data-index="5"></div>
-    </div>
+    <section class="grid" aria-label="game grid">
+        <button class="hole" data-index="0" aria-label="hole 1"></button>
+        <button class="hole" data-index="1" aria-label="hole 2"></button>
+        <button class="hole" data-index="2" aria-label="hole 3"></button>
+        <button class="hole" data-index="3" aria-label="hole 4"></button>
+        <button class="hole" data-index="4" aria-label="hole 5"></button>
+        <button class="hole" data-index="5" aria-label="hole 6"></button>
+    </section>
 
-    <div class="title">WHACK - A - MOLE</div>
+    <h1 class="title">WHACK - A - MOLE</h1>
 
     <!-- BUTTONS -->
-    <div class="buttons">
+    <nav class="buttons" aria-label="game controls">
         <button id="startBtn">START</button>   <!-- ✅ FIXED -->
         <button id="resumeBtn">RESUME</button>
         <button id="resetBtn">RESET</button>
-    </div>
+    </nav>
 
-</div>
+</main>
 
 <!-- JS at bottom (good 👍) -->
 <script src="script.js"></script>
