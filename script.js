@@ -34,6 +34,16 @@ window.addEventListener("load", () => {
     }
 });
 
+// Avatar option selection
+let avatarOptions = document.querySelectorAll(".avatar-option");
+avatarOptions.forEach(option => {
+    option.addEventListener("click", (e) => {
+        let avatarSrc = option.getAttribute("data-avatar");
+        avatarImg.src = avatarSrc;
+        localStorage.setItem("userAvatar", avatarSrc);
+    });
+});
+
 // random hole
 function randomHole() {
     return holes[Math.floor(Math.random() * holes.length)];

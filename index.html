@@ -12,11 +12,6 @@
 <main class="container">
 
     <header class="top">
-        <!-- FEEDBACK -->
-        <aside class="feedback">
-            <h3>FEEDBACK</h3>
-        </aside>
-
         <!-- AVATAR -->
         <figure class="avatar">
             <label for="avatar-upload" class="avatar-upload-label">
@@ -24,6 +19,21 @@
                 <span class="avatar-hint">Click to upload</span>
             </label>
             <input type="file" id="avatar-upload" accept="image/*" hidden>
+            <!-- Avatar Options -->
+            <div class="avatar-options">
+                <button type="button" class="avatar-option" data-avatar="gumball.png" aria-label="Gumball">
+                    <img src="gumball.png" alt="Gumball">
+                </button>
+                <button type="button" class="avatar-option" data-avatar="hellokittypfp.png" aria-label="Hello Kitty">
+                    <img src="hellokittypfp.png" alt="Hello Kitty">
+                </button>
+                <button type="button" class="avatar-option" data-avatar="minniemouse.png" aria-label="Minnie Mouse">
+                    <img src="minniemouse.png" alt="Minnie Mouse">
+                </button>
+                <button type="button" class="avatar-option" data-avatar="patrickstar.png" aria-label="Patrick Star">
+                    <img src="patrickstar.png" alt="Patrick Star">
+                </button>
+            </div>
         </figure>
 
         <!-- SCORE -->
