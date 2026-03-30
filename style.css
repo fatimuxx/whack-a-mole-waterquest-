@@ -131,6 +131,9 @@ body {
 /* SCORE */
 .score {
     width: 250px;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 
@@ -195,6 +198,11 @@ body {
     border: none;
     font-weight: bold;
     cursor: pointer;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+    
 }
 
 /* TITLE */
@@ -222,6 +230,15 @@ body {
     font-weight: normal;
     cursor: pointer;
     box-shadow: none;
+}
+footer{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 /* Responsive avatar options */
 @media (max-width: 900px) {
