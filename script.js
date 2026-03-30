@@ -78,7 +78,7 @@ function showMole() {
 
     // jug image as the mole
     let jugImg = document.createElement('img');
-    jugImg.src = 'charityjug.jpg';
+    jugImg.src = 'charityjug2.png';
     jugImg.alt = 'jug';
     jugImg.classList.add('jug');
     mole.appendChild(jugImg);
